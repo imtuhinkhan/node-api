@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 require("./app/routes/reservation.routes.js")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4100;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
