@@ -2,6 +2,9 @@ const Reservation = require("../models/reservation.model.js");
 
 // Create and Save a new Reservation
 exports.create = (req, res) => {
+
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Headers', 'Content-Type')
   // Validate request
   if (!req.body) {
     res.status(400).send({
@@ -14,20 +17,20 @@ exports.create = (req, res) => {
   // Create a Reservation
   const reservation = new Reservation({
     login_time: req.body.login_time,
-		personal_information_enter_time:req.body.personal_information_enter_time,
-		from_to_enter_time:req.body.from_to_enter_time,
-		date_time_enter_time:req.body.date_time_enter_time,
-		amount_enter_time:req.body.amount_enter_time,
-		note_enter_time:req.body.note_enter_time,
-		name: req.body.name,
-		gender: req.body.gender,
-		location_from: req.body.location_from,
-		location_to: req.body.location_to,
-		reservation_date:  req.body.reservation_date,
-		reservation_time: req.body.reservation_time,
-		amount: req.body.amount,
-		note: req.body.note,
-    reservation_id:reservationId
+    personal_information_enter_time: req.body.personal_information_enter_time,
+    from_to_enter_time: req.body.from_to_enter_time,
+    date_time_enter_time: req.body.date_time_enter_time,
+    amount_enter_time: req.body.amount_enter_time,
+    note_enter_time: req.body.note_enter_time,
+    name: req.body.name,
+    gender: req.body.gender,
+    location_from: req.body.location_from,
+    location_to: req.body.location_to,
+    reservation_date: req.body.reservation_date,
+    reservation_time: req.body.reservation_time,
+    amount: req.body.amount,
+    note: req.body.note,
+    reservation_id: reservationId
   });
 
   // Save Reservation in the database
@@ -38,13 +41,13 @@ exports.create = (req, res) => {
           message:
             err.message || "Name already exists."
         });
-      }else{
+      } else {
         res.status(500).send({
           message:
             err.message || "Some error occurred while creating the Reservation."
         });
       }
-      
+
     else res.send(data);
   });
 };
