@@ -7,5 +7,5 @@
 3. Run ```npm install```
 4. Rename ```.db.config.js.example``` to ```.db.config.js```
 5. Provide your correct db credentials in the above file
-6. Run ```start```
+6. Run ```npm start```
 
