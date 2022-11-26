@@ -1,5 +1,7 @@
 # Node.js (Express) Rest APIs with MySQL database.
 
+## Live deployment url:  http://13.214.70.232:4100 
+
 ## How to run
 
 1. Clone the app in your local pc /server
