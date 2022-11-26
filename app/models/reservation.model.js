@@ -62,4 +62,16 @@ Reservation.findById = (id, result) => {
     result({ kind: "not_found" }, null);
   });
 };
+
+Reservation.deleteById = (id, result) => {
+  sql.query(`DELETE FROM reservations WHERE reservation_id = ${id}`, (err, res) => {
+    if (err) {
+      result(err, null);
+      return;
+    }else{
+      result();
+      return;
+    }
+  });
+};
 module.exports = Reservation;

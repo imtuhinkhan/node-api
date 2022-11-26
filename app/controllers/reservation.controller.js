@@ -69,3 +69,25 @@ exports.findOne = (req, res) => {
     } else res.send(data);
   });
 };
+
+// Find a single Reservation by Id
+exports.delete = (req, res) => {
+  Reservation.deleteById(req.params.id, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found Reservation with id ${req.params.id}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving Reservation with id " + req.params.id
+        });
+      }
+    } else {
+      res.status(200).send({
+        success:true,
+        message: "Successfully deleted"
+      });
+    }
+})
+};
