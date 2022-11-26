@@ -1,4 +1,4 @@
-# Node.js (Express) Rest APIs with MySQL database
+# Node.js (Express) Rest APIs with MySQL database.
 
 ## How to run
 
